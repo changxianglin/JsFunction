@@ -1,3 +1,10 @@
+Function.prototype.method = function (name, func) {
+    if (!this.prototype[name]) {
+        this.prototype[name] = func
+    }
+    return this
+}
+
 String.method('deentityify', function () {
 
     var entity = {
@@ -15,7 +22,7 @@ String.method('deentityify', function () {
     }
 }())
 
-// console.log('&lt;&quot;&gt;'.deentityify( ))
+console.log('&lt;&quot;&gt;'.deentityify( ))
 
 var serial_marker = function () {
     var prefix = ''
